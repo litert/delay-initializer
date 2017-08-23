@@ -42,7 +42,7 @@ trait TPropertyContainer
             );
         }
 
-        return $this->$name = $this->__delayCtors[$name]();
+        return $this->$name = $this->__delayCtors[$name]($this);
     }
 
     /**

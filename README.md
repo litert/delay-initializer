@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/litert/delay-initializer/v/stable?format=flat-square)](https://packagist.org/packages/litert/delay-initializer) [![License](https://poser.pugx.org/litert/delay-initializer/license?format=flat-square)](https://packagist.org/packages/litert/delay-initializer)
 
-A simple delay-initliazer library for PHP.
+A simple delay-initializer library for PHP.
 
 ## Installation
 

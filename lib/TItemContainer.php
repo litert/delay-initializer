@@ -50,7 +50,7 @@ trait TItemContainer
             );
         }
 
-        return $this->__delayItems[$name] = $this->__delayCtors[$name]();
+        return $this->__delayItems[$name] = $this->__delayCtors[$name]($this);
     }
 
     /**
