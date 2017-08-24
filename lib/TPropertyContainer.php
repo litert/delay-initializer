@@ -18,12 +18,20 @@ trait TPropertyContainer
      */
     protected $__delayCtors;
 
+    protected $__delayCtorArgs;
+
     /**
      * Initialize the delay initializer.
      */
     protected function _initializeDelayInit()
     {
         $this->__delayCtors = [];
+        $this->__delayCtorArgs = [$this];
+    }
+
+    protected function _setInitializerArgs(array $args)
+    {
+        $this->__delayCtorArgs = $args;
     }
 
     /**
@@ -42,7 +50,9 @@ trait TPropertyContainer
             );
         }
 
-        return $this->$name = $this->__delayCtors[$name]($this);
+        return $this->$name = $this->__delayCtors[$name](
+            ...$this->__delayCtorArgs
+        );
     }
 
     /**

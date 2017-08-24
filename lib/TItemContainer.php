@@ -20,6 +20,8 @@ trait TItemContainer
 
     protected $__delayItems;
 
+    protected $__delayCtorArgs;
+
     /**
      * Initialize the delay initializer.
      */
@@ -27,6 +29,12 @@ trait TItemContainer
     {
         $this->__delayCtors = [];
         $this->__delayItems = [];
+        $this->__delayCtorArgs = [$this];
+    }
+
+    protected function _setInitializerArgs(array $args)
+    {
+        $this->__delayCtorArgs = $args;
     }
 
     /**
@@ -50,7 +58,9 @@ trait TItemContainer
             );
         }
 
-        return $this->__delayItems[$name] = $this->__delayCtors[$name]($this);
+        return $this->__delayItems[$name] = $this->__delayCtors[$name](
+            ...$this->__delayCtorArgs
+        );
     }
 
     /**

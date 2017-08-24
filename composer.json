@@ -3,7 +3,7 @@
     "description" : "A simple delay-initliazer library for PHP.",
     "type" : "library",
     "license" : "Apache-2.0",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "autoload" : {
         "psr-4" : {
             "L\\Kits\\DelayInit\\" : "lib"
@@ -12,8 +12,8 @@
     "homepage" : "https://fenying.net",
     "support" : {
         "email" : "i.am.x.fenying@gmail.com",
-        "issues" : "https://github.com/litert/ioc/issues",
-        "source" : "https://github.com/litert/ioc/"
+        "issues" : "https://github.com/litert/delay-initializer/issues",
+        "source" : "https://github.com/litert/delay-initializer/"
     },
     "require": {
         "php": ">=7.0.0",
@@ -26,12 +26,12 @@
         "role" : "Master"
     }],
     "keywords" : [
-        "privilege", "control"
+        "delay", "initializer"
     ],
     "repositories" : [{
         "type" : "git",
-        "url" : "git@github.com:litert/ioc.git",
-        "name" : "IoC"
+        "url" : "git@github.com:litert/delay-initializer.git",
+        "name" : "DelayInitializer"
     }],
     "extra": {
         "branch-alias": {
