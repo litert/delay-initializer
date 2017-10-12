@@ -1,4 +1,3 @@
-#!env php
 <?php
 /*
    +----------------------------------------------------------------------+
@@ -15,46 +14,21 @@
    +----------------------------------------------------------------------+
  */
 
-declare (strict_types = 1);
+declare (strict_types=1);
 
-namespace Test\DelayInitializer;
-
-require __DIR__ . '/../vendor/autoload.php';
+namespace L\Kits\DelayInit;
 
 /**
- * Class DI
+ * A dependency injection container base on property delay initializer.
  *
- * @property int test
+ * @package litert/delay-initialzer
  */
-class DI implements \L\Kits\DelayInit\PropertyContainer
+abstract class PropertyDIContainer implements PropertyContainerEx
 {
-    use \L\Kits\DelayInit\TPropertyContainer;
+    use TPropertyContainerEx;
 
     public function __construct()
     {
         $this->_initializeDelayInit();
-
-        $this->setInitializer('test', function(int $v) {
-
-            return $v * 123;
-        });
-
-        $this->_setInitializerArgs([133]);
     }
-}
-
-$di = new DI();
-
-echo $di->test, PHP_EOL;
-
-try {
-
-    echo $di->gggg;
-}
-catch (\L\Core\Exception $e) {
-
-    echo <<<ERROR
-Error({$e->getCode()}): {$e->getMessage()}
-ERROR;
-
 }

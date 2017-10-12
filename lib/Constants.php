@@ -1,4 +1,3 @@
-#!env php
 <?php
 /*
    +----------------------------------------------------------------------+
@@ -15,46 +14,9 @@
    +----------------------------------------------------------------------+
  */
 
-declare (strict_types = 1);
+declare (strict_types=1);
 
-namespace Test\DelayInitializer;
+namespace L\Error\DelayInit;
 
-require __DIR__ . '/../vendor/autoload.php';
-
-/**
- * Class DI
- *
- * @property int test
- */
-class DI implements \L\Kits\DelayInit\PropertyContainer
-{
-    use \L\Kits\DelayInit\TPropertyContainer;
-
-    public function __construct()
-    {
-        $this->_initializeDelayInit();
-
-        $this->setInitializer('test', function(int $v) {
-
-            return $v * 123;
-        });
-
-        $this->_setInitializerArgs([133]);
-    }
-}
-
-$di = new DI();
-
-echo $di->test, PHP_EOL;
-
-try {
-
-    echo $di->gggg;
-}
-catch (\L\Core\Exception $e) {
-
-    echo <<<ERROR
-Error({$e->getCode()}): {$e->getMessage()}
-ERROR;
-
-}
+const BASE = 0x00010100;
+const ITEM_NOT_FOUND = 0x00010101;
