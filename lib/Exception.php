@@ -16,7 +16,9 @@
 
 declare (strict_types=1);
 
-namespace L\Error\DelayInit;
+namespace L\Kits\DelayInit;
 
-const BASE = 0x00010100;
-const ITEM_NOT_FOUND = 0x00010101;
+class Exception extends \L\Core\Exception
+{
+    const ITEM_NOT_FOUND = 0x00000001;
+}

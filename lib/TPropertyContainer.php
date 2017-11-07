@@ -18,8 +18,6 @@ declare (strict_types = 1);
 
 namespace L\Kits\DelayInit;
 
-use \L\Core\Exception;
-
 /**
  * This trait provides the basic methods for managing the delay
  * initialized properties.
@@ -64,7 +62,7 @@ trait TPropertyContainer
 
             throw new Exception(
                 "Property {$name} not found.",
-                \L\Error\DelayInit\ITEM_NOT_FOUND
+                Exception::ITEM_NOT_FOUND
             );
         }
 

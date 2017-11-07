@@ -1,5 +1,10 @@
 # Changed Logs
 
+## v0.3.0 (2017-11-07)
+
+- Use independent Exception class.
+- Upgrade dependency **litert/core** to v0.2.0.
+
 ## v0.2.0 (2017-10-01)
 
 - Added interface `ItemContainerEx`.

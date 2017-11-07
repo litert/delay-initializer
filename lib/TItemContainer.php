@@ -18,8 +18,6 @@ declare (strict_types = 1);
 
 namespace L\Kits\DelayInit;
 
-use \L\Core\Exception;
-
 /**
  * This trait provides the basic methods for managing the delay
  * initialized items.
@@ -70,7 +68,7 @@ trait TItemContainer
 
             throw new Exception(
                 "Item {$name} not found.",
-                \L\Error\DelayInit\ITEM_NOT_FOUND
+                Exception::ITEM_NOT_FOUND
             );
         }
 

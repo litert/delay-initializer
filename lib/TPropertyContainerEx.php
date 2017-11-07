@@ -18,8 +18,6 @@ declare (strict_types = 1);
 
 namespace L\Kits\DelayInit;
 
-use \L\Core\Exception;
-
 /**
  * This trait provides the extended methods for managing the delay
  * initialized properties.
